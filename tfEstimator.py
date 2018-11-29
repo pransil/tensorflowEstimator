@@ -27,7 +27,7 @@ import tensorflow as tf
 # Check that we have correct TensorFlow version installed
 tf_version = tf.__version__
 print("TensorFlow version: {}".format(tf_version))
-assert "1.12" <= tf_version, "TensorFlow r1.4 or later is needed"
+assert "1.12" <= tf_version, "TensorFlow r1.4 or later is needed (assert did not work - thinks 1.12 < 1.4 so I edited)"
 
 # Windows users: You only need to change PATH, rest is platform independent
 PATH = "/tmp/tf_dataset_and_estimator_apis"
@@ -53,7 +53,7 @@ def download_dataset(url, file):
 download_dataset(URL_TRAIN, FILE_TRAIN)
 download_dataset(URL_TEST, FILE_TEST)
 
-tf.logging.set_verbosity(tf.logging.INFO)
+tf.logging.set_verbosity(tf.logging.WARN)
 
 # The CSV features in our training & test data
 feature_names = [
